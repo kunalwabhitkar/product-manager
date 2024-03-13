@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: #333; /* Text color */
+}
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* Container background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Button Styles */
+.button-container {
+    text-align: right; /* Align buttons to the right */
+}
+
+.btn {
+    margin-top: 10px; /* Add margin above buttons */
+}
+
+.btn-secondary {
+    background-color: #0e0e0e;
+    color: #d70707;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #b3000f;
+    text-decoration-color: #0a0d10;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px; /* Add space between form groups */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Header Styles */
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #0a0d10;
+}
+
+</style>
+</head>
+
+<body>
+  
+<center>
+  <div class="container">
+   
+
+
+    <hr />
+
+    <div class="container" id="productForm">
+        <h2>New Product Form</h2>
+        <form action="http://localhost:3000/updateproduct/<%= data[0].productId %>" method="post">
+          <div class="form-group">
+            <label for="id"><b>Category ID :</b></label>
+            <input type="text" class="form-control" id="id" name="catId">
+          </div>
+          <div class="form-group">
+              <label for="id"><b> Product Name :</b></label>
+              <input type="text" class="form-control" id="id" name="productName">
+            </div>
+          <hr />
+          <button type="submit"class="btn btn-info">Add Product</button>
+        </form>
+      </div>
+      <font color="green" size="6"></font>
+      </div>
+      <hr>
+      <!-- <button  type="button" class="btn btn-secondary btn-lg" ><a href="/home" style="color:black;">Home</a></button> -->
+      <button type="button" class="btn btn-secondary btn-lg"><a href="/home">Home</a></button>
+
+      <hr>
+    </center>
+</body>
+
+</html>
+ 
+
+

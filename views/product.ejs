@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    h2 {
+      color: #343a40;
+    }
+
+    .form-control {
+      border-color: #ced4da;
+    }
+
+    .btn-info {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+      margin-bottom: 10px;
+    }
+
+    .btn-info:hover {
+      background-color: #138496;
+      border-color: #138496;
+      
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+
+    .table {
+      background-color: #fff;
+      border: #343a40;
+      border-style: dashed;
+    }
+
+    th,
+    td {
+      color: #343a40;
+    }
+
+    .btn {
+    margin-top: 10px; /* Add margin above buttons */
+}
+
+.btn-secondary {
+    background-color:  #17a2b8;
+    color: #578bf3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color:grey;
+    text-decoration-color: #0a0d10;
+}
+
+  </style>
+  </style>
+</head>
+
+<body>
+  
+
+  <center>
+    <div class="container">
+      
+
+      <div class="container" id="productForm">
+        <h2> Product Form</h2>
+        <form action="http://localhost:3000/insertproduct" method="post">
+          <div class="form-group">
+            <label for="id"><b>Category ID :</b></label>
+            <input type="text" class="form-control" id="id" name="catId">
+          </div>
+          <div class="form-group">
+            <label for="id"><b>Product Name :</b></label>
+            <input type="text" class="form-control" id="id" name="productName">
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-info">Add Product</button>
+        </form>
+      </div>
+      <font color="green" size="6"></font>
+    </div>
+
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr.No</th>
+          <th scope="col">CategoryId</th>
+          <th scope="col">CategoryName</th>
+          <th scope="col">ProductId</th>
+          <th scope="col">ProductName</th>
+          <th scope="col">UPDATE PRODUCT</th>
+          <th scope="col">DELETE PRODUCT</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% for(let i=0;i<=data.length-1;i++){ %>
+          <tr>
+            <td>
+              <%= i+1 %>
+            </td>
+            <td>
+              <%= data[i].categoryId %>
+            </td>
+            <td>
+              <%= data[i].categoryName %>
+            </td>
+            <td>
+              <%= data[i].productId %>
+            </td>
+            <td>
+              <%= data[i].productName %>
+            </td>
+
+
+            <td>
+              <a href="/selectupdate/<%= data[i].productId %>" class="btn btn-primary">UPDATE PRODUCT</a>
+            </td>
+            <td>
+              <a href="/deleteproduct/<%= data[i].productId %>" class="btn btn-info">DELETE PRODUCT </a>
+            </td>
+          </tr>
+          <% }%>
+
+      </tbody>
+    </table>
+    <hr>
+    <button type="button" class="btn btn-secondary btn-lg"><a href="/home" style="color:black;">Home</a></button>
+    <hr>
+  </center>
+
+</body>
+
+</html>

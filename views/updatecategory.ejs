@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      /* Light gray background */
+    }
+
+    .container {
+      margin-top: 50px;
+      /* Adjusting the top margin */
+    }
+
+    h2 {
+      color: #343a40;
+      /* Dark gray text color */
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      /* Adjusting the bottom margin for form groups */
+    }
+
+    .btn-info {
+      background-color: #17a2b8;
+      /* Blue background */
+      border-color: #17a2b8;
+      /* Blue border color */
+    }
+
+    .btn-info:hover {
+      background-color: #138496;
+      /* Darker blue background on hover */
+      border-color: #138496;
+      /* Darker blue border color on hover */
+    }
+
+    .btn-secondary {
+      background-color: #17a2b8;
+      ;
+      /* Gray background */
+
+      text-decoration-color: black;
+      /* Gray border color */
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      /* Darker gray background on hover */
+      border-color: #545b62;
+      /* Darker gray border color on hover */
+      text-decoration-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+
+    <div class="container">
+      <h2> Update Product Page</h2>
+
+
+      <hr />
+
+      <div class="container" id="categoryForm">
+        <h2> Product Form</h2>
+        <form action="http://localhost:3000/updatecat/<%= data[0].categoryId %>" method="post">
+          <div class="form-group">
+            <label for="id">Category Name :</label>
+            <input type="text" class="form-control" id="id" name="categoryName">
+          </div>
+
+          <button type="submit" class="btn btn-info">Update Product</button>
+        </form>
+      </div>
+
+      <font color="green" size="6"></font>
+
+    </div>
+    <hr>
+    <button type="button" class="btn btn-secondary btn-lg" style="color: black;"><a href="/home">Home</a></button>
+
+  </center>
+</body>
+
+</html>
